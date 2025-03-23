@@ -1168,6 +1168,18 @@
     </div>
 </section>
 
+    <!-- Trending Dishes Section -->
+<section class="trending-dishes" id="trending">
+    <div class="container">
+        <h2 class="section-title">Trending Dishes</h2>
+        <div class="trending-container">
+            <div class="trending-wrapper">
+                <!-- Trending items will be dynamically populated here -->
+            </div>
+        </div>
+    </div>
+</section>
+    
 <!-- Menu Section -->
 <section class="categories" id="menu">
     <div class="container">
@@ -1683,6 +1695,111 @@ let nonVegToggle;
 let vegPreference = 'all'; // 'all', 'veg', 'nonveg'
 let currentCategory = 'all';
 
+
+// Function to initialize trending dishes section
+function initTrendingDishes() {
+    // Get a selection of trending dishes from the menu data
+    const trendingItems = [
+        menuData.find(item => item.id === 13), // Butter Chicken
+        menuData.find(item => item.id === 9),  // Paneer Butter Masala
+        menuData.find(item => item.id === 23), // Chicken Biryani
+        menuData.find(item => item.id === 25), // Gulab Jamun
+        menuData.find(item => item.id === 5),  // Chicken Tikka
+        menuData.find(item => item.id === 1),  // Paneer Tikka
+        menuData.find(item => item.id === 24), // Mutton Biryani
+        menuData.find(item => item.id === 30)  // Lassi
+    ];
+
+    const trendingWrapper = document.querySelector('.trending-wrapper');
+    
+    if (!trendingWrapper) {
+        console.error('Trending wrapper not found');
+        return;
+    }
+    
+    // Generate trending items HTML
+    let trendingHTML = '';
+    
+    // Create double set of items for infinite scroll effect
+    const allTrendingItems = [...trendingItems, ...trendingItems];
+    
+    allTrendingItems.forEach(item => {
+        if (!item) return;
+        
+        const rating = (Math.random() * (5 - 4) + 4).toFixed(1);
+        const isNew = Math.random() > 0.7;
+        
+        trendingHTML += `
+            <div class="trending-item">
+                <img src="${item.image}" alt="${item.name}">
+                ${isNew ? '<span class="trending-badge">New!</span>' : ''}
+                <div class="trending-content">
+                    <h3>${item.name}</h3>
+                    <span class="trending-price">₹${item.price.toFixed(2)}</span>
+                    <p class="trending-desc">${item.description}</p>
+                    <div class="trending-action">
+                        <div class="trending-rating">
+                            <span class="trending-veg-indicator ${item.isVeg ? 'veg' : 'nonveg'}"></span>
+                            <span>★ ${rating}</span>
+                        </div>
+                        <button class="trending-btn" data-id="${item.id}">Add</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    trendingWrapper.innerHTML = trendingHTML;
+    
+    // Add click event listeners to Add buttons
+    const addButtons = document.querySelectorAll('.trending-btn');
+    addButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemId = parseInt(this.getAttribute('data-id'));
+            const menuItem = menuData.find(item => item.id === itemId);
+            
+            if (!menuItem) return;
+            
+            // Check if item is already in cart
+            const existingItem = cart.find(item => item.id === itemId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...menuItem,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showNotification(`${menuItem.name} added to cart!`);
+            
+            // Visual feedback on button click
+            this.textContent = 'Added!';
+            this.style.background = '#4CAF50';
+            
+            setTimeout(() => {
+                this.textContent = 'Add';
+                this.style.background = '#ff6b6b';
+            }, 1000);
+        });
+    });
+    
+    // Add hover pause effect
+    const trendingContainer = document.querySelector('.trending-container');
+    if (trendingContainer) {
+        trendingContainer.addEventListener('mouseenter', function() {
+            document.querySelector('.trending-wrapper').style.animationPlayState = 'paused';
+        });
+        
+        trendingContainer.addEventListener('mouseleave', function() {
+            document.querySelector('.trending-wrapper').style.animationPlayState = 'running';
+        });
+    }
+}
+
+
 // Initialize the application
 function init() {
     // Initialize DOM elements
@@ -1723,6 +1840,9 @@ function init() {
     
     // Initialize cart count
     updateCart();
+
+    // Initialize trending dishes section
+    initTrendingDishes(); // Add this line
 }
 
 // Display menu items based on category and veg/non-veg preference
