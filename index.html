@@ -2293,7 +2293,7 @@ function updateCart() {
     cartCountElement.textContent = cartCount;
     
     // Update totals
-    const deliveryFee = cart.length > 0 ? 49 : 0;
+    const deliveryFee = cart.length > 0 ? 39 : 0;
     subtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
     const taxAmount = subtotal * 0.05; // 5% tax
     const taxElement = document.getElementById('tax');
@@ -2374,7 +2374,7 @@ function placeOrder() {
     
     // Add total
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const deliveryFee = 49;
+    const deliveryFee = 39;
     const taxAmount = subtotal * 0.05; // 5% tax
     const total = subtotal + deliveryFee + taxAmount;
     
