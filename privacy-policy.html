@@ -193,7 +193,24 @@
             color: #bbb;
             font-size: 0.9rem;
         }
-        
+        /* Only for VindhuVendors and Quick Links */
+.footer-section:first-child h3,
+.footer-section:nth-child(2) h3 {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section:first-child h3::after,
+.footer-section:nth-child(2) h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b6b, #ff5252);
+    border-radius: 2px;
+}
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
