@@ -361,6 +361,20 @@ input {
 </style>
 
 <style>
+	:root {
+    --primary: #FF6B6B;
+    --primary-dark: #FF5252;
+    --primary-light: #FF8E8E;
+    --secondary: #4ECDC4;
+    --accent: #FFD166;
+    --dark: #2D3436;
+    --light: #F7F7F7;
+    --success: #06D6A0;
+    --warning: #FFD166;
+    --danger: #EF476F;
+    --veg: #0F9D58;
+    --nonveg: #FF5252;
+    }
     body {
         background-color: #f8f9fa;
         color: #333;
@@ -1480,7 +1494,30 @@ input {
         border-radius: 50%;
         margin: 2px;
     }
+	/*Trending dishes*/
 
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: var(--dark);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
     .trending-dishes {
     padding: 40px 0;
     background: linear-gradient(to right, #f8f9fa, #f1f1f1);
