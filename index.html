@@ -2883,6 +2883,7 @@ function toggleCart(forceOpen = false) {
         cartContainer.classList.toggle('open');
         overlay.style.display = cartContainer.classList.contains('open') ? 'block' : 'none';
     }
+	    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // Close all modals and overlays
@@ -2894,7 +2895,7 @@ function closeAll() {
 
 // Place order
 function placeOrder() {
-    if (!orderModal) return;
+    /*if (!orderModal) return;
     
     // Get order summary
     let orderSummary = '<h3>Order Summary</h3><ul>';
@@ -2925,8 +2926,13 @@ function placeOrder() {
     overlay.style.display = 'block';
     cart = [];
     updateCart();
-}
-
+*/
+         // Save cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Redirect to payment page
+    window.location.href = 'indexPayment.html';
+    }
 // Handle contact form submission
 function handleFormSubmit(e) {
     e.preventDefault();
