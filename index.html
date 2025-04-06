@@ -53,7 +53,9 @@ nav {
     width: 120px;  /* Adjust the width as needed */
     height: auto;  /* Maintain aspect ratio */
 }
-
+.logo img:hover {
+    transform: scale(2.05);
+}
 
 .nav-links {
     display: flex;
@@ -1750,7 +1752,7 @@ input {
                     <li><a href="#">Home</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#contact-items">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li class="user-actions" id="userActions">
                         <a href="#" id="loginBtn">Login</a>
                         <a href="#" id="signupBtn">Sign Up</a>
@@ -1998,22 +2000,23 @@ input {
                     <div class="contact-icon">✉️</div>
                     <div class="contact-details">
                         <h3>Email</h3>
-                        <p>info@vindhuvendors.com</p>
+                        <p>vindhuvendors@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">🏢</div>
                     <div class="contact-details">
                         <h3>Office</h3>
-                        <p>New Block , NBKRIST , Vidyanagar, Kota, Tirupati Dist-524413, Andhra Pradesh, India</p>
+                        <p> Full Stack Lab , New Block , NBKRIST , Vidyanagar, Kota, Tirupati Dist-524413, Andhra Pradesh, India</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">⏰</div>
                     <div class="contact-details">
                         <h3>Working Hours</h3>
-                        <p>Monday - Thursday: 10:00 AM - 10:00 PM</p>
-                        <p>Friday - Sunday : 8:00 AM - 10:00 PM</p>
+                        <p>Monday - Thursday: 10:00 AM - 5:00 PM</p>
+                        <p>Friday - Saturday : 10:00 AM - 3:00 PM</p>
+			    <p>Sunday - Closed </p>
                     </div>
                 </div>
             </div>
@@ -2072,7 +2075,7 @@ input {
                     <li><a href="#home">Home</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#hotels">Restaurants</a></li>
-                    <li><a href="#contact-details">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                 </ul>
@@ -2091,7 +2094,7 @@ const menuData = [
     {
         id: 1,
         name: "Paneer Tikka",
-        price: 190,
+        price: 160,
         description: "Marinated cottage cheese cubes grilled in a tandoor.",
         image: "https://i.pinimg.com/736x/ac/4b/94/ac4b9463bc4a1d69ad4f589fef95be5c.jpg",
         category: "starter",
@@ -2100,7 +2103,7 @@ const menuData = [
 	{
     id: 2,
     name: "Veg Spring Rolls",
-    price: 180,
+    price: 140,
     description: "Crispy rolls filled with vegetables and spices.",
     image: "https://i.pinimg.com/474x/ed/23/35/ed2335a08f9dd1fcf6d59123eaf984c1.jpg",
     category: "starter",
@@ -2109,7 +2112,7 @@ const menuData = [
 {
     id: 3,
     name: "Aloo Tikki",
-    price: 150,
+    price: 120,
     description: "Spiced potato patties served with chutney.",
     image: "https://i.pinimg.com/474x/22/b5/c5/22b5c57213c50eda9dc1cc5c118c5f69.jpg",
     category: "starter",
@@ -2118,7 +2121,7 @@ const menuData = [
 {
     id: 4,
     name: "Gobi Manchurian",
-    price: 190,
+    price: 130,
     description: "Cauliflower florets tossed in spicy Indo-Chinese sauce.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyUvDYwxBKquORb3v4T9OOKkkE4YBK5u-pcQ&s",
     category: "starter",
@@ -2138,7 +2141,7 @@ const menuData = [
 {
     id: 6,
     name: "Fish Amritsari",
-    price: 290,
+    price: 250,
     description: "Spiced fish fritters, crispy outside and soft inside.",
     image: "https://i.pinimg.com/474x/0d/b1/74/0db174181bf8af900c73d1aafbeadd7b.jpg",
     category: "starter",
@@ -2147,7 +2150,7 @@ const menuData = [
 {
     id: 7,
     name: "Mutton Seekh Kebab",
-    price: 320,
+    price : 290,
     description: "Minced mutton kebabs cooked on skewers in a tandoor.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk-UHjF8Celg66B1XvB1Kj2e4wbMMWP7cRJQ&s",
     category: "starter",
@@ -2156,7 +2159,7 @@ const menuData = [
 {
     id: 8,
     name: "Prawn 65",
-    price: 350,
+    price: 320,
     description: "Spicy deep-fried prawns with curry leaves and spices.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgaIJTyNlWd-677PhFv4a3iv0zdWZV8ND4GA&s",
     category: "starter",
@@ -2167,7 +2170,7 @@ const menuData = [
 {
     id: 9,
     name: "Paneer Butter Masala",
-    price: 250,
+    price: 220,
     description: "Cottage cheese cubes in a rich tomato and butter gravy.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE2i0uRJZ9gTQXx5eJARrReUI82gHpDwC4xA&s",
     category: "main",
@@ -2176,7 +2179,7 @@ const menuData = [
 {
     id: 10,
     name: "Dal Makhani",
-    price: 220,
+    price: 180,
     description: "Black lentils cooked with butter and cream.",
     image: "https://i.pinimg.com/474x/be/5a/ab/be5aab77d41237a5d9bc2afbb0ccc808.jpg",
     category: "main",
@@ -2185,7 +2188,7 @@ const menuData = [
 {
     id: 11,
     name: "Veg Kolhapuri",
-    price: 230,
+    price: 190,
     description: "Mixed vegetables in a spicy Kolhapuri masala.",
     image: "https://i.pinimg.com/474x/4e/b8/82/4eb88239b20c0d5e4017d99e99a3d995.jpg",
     category: "main",
@@ -2205,7 +2208,7 @@ const menuData = [
 {
     id: 13,
     name: "Butter Chicken",
-    price: 320,
+    price: 280,
     description: "Tandoori chicken cooked in a rich tomato and butter gravy.",
     image: "https://i.pinimg.com/474x/93/e9/79/93e97987768f9240c5ffda2475c0ce28.jpg",
     category: "main",
@@ -2223,7 +2226,7 @@ const menuData = [
 {
     id: 15,
     name: "Fish Curry",
-    price: 330,
+    price: 310,
     description: "Fish pieces cooked in a tangy and spicy gravy.",
     image: "https://i.pinimg.com/474x/6e/37/82/6e3782b29f80e9e8b6be9efe2fc5ef90.jpg",
     category: "main",
@@ -2252,7 +2255,7 @@ const menuData = [
 {
     id: 18,
     name: "Garlic Roti",
-    price: 45,
+    price: 35,
     description: "Whole wheat bread with garlic flavor.",
     image: "https://i.pinimg.com/474x/d5/a6/d1/d5a6d1f2510090efaff9cbf4fbd39838.jpg",
     category: "bread",
@@ -2261,7 +2264,7 @@ const menuData = [
 {
     id: 19,
     name: "Laccha Paratha",
-    price: 60,
+    price: 50,
     description: "Multilayered flaky bread.",
     image: "https://i.pinimg.com/474x/51/0b/05/510b05d77442118674682532c1ddb0f7.jpg",
     category: "bread",
@@ -2270,7 +2273,7 @@ const menuData = [
 {
     id: 20,
     name: "Aloo Paratha",
-    price: 75,
+    price: 65,
     description: "Stuffed bread with spiced potato filling.",
     image: "https://i.pinimg.com/474x/2d/41/1a/2d411adae281d8e22c70ade705a8f4bd.jpg",
     category: "bread",
@@ -2281,7 +2284,7 @@ const menuData = [
 {
     id: 21,
     name: "Jeera Rice",
-    price: 150,
+    price: 120,
     description: "Basmati rice flavored with cumin seeds.",
     image: "https://i.pinimg.com/474x/5b/72/91/5b729124bfdc306b348c478f31e13b10.jpg",
     category: "rice",
@@ -2290,7 +2293,7 @@ const menuData = [
 {
     id: 22,
     name: "Veg Biryani",
-    price: 250,
+    price: 190,
     description: "Fragrant rice cooked with mixed vegetables and spices.",
     image: "https://i.pinimg.com/474x/53/0f/4c/530f4c3138de463f40940d6d2c31ec32.jpg",
     category: "rice",
@@ -2299,7 +2302,7 @@ const menuData = [
 {
     id: 23,
     name: "Chicken Biryani",
-    price: 300,
+    price: 290,
     description: "Fragrant rice cooked with chicken and spices.",
     image: "https://i.pinimg.com/474x/1a/59/f0/1a59f0e988c227075ce7a6e261f9f362.jpg",
     category: "rice",
@@ -2308,7 +2311,7 @@ const menuData = [
 {
     id: 24,
     name: "Mutton Biryani",
-    price: 350,
+    price: 330,
     description: "Fragrant rice cooked with mutton and spices.",
     image: "https://i.pinimg.com/474x/93/64/ad/9364ad69cabdeeacc7304b2b503aae47.jpg",
     category: "rice",
@@ -2319,7 +2322,7 @@ const menuData = [
 {
     id: 25,
     name: "Gulab Jamun",
-    price: 120,
+    price: 109,
     description: "Deep-fried milk solids soaked in sugar syrup.",
     image: "https://i.pinimg.com/474x/b6/57/81/b65781f3433f83d586830321a326e9cc.jpg",
     category: "dessert",
@@ -2328,7 +2331,7 @@ const menuData = [
 {
     id: 26,
     name: "Rasmalai",
-    price: 150,
+    price: 130,
     description: "Soft cottage cheese dumplings in sweetened milk.",
     image: "https://i.pinimg.com/474x/26/65/ae/2665aee2c46ccfd2e197bdc67a8f05e7.jpg",
     category: "dessert",
@@ -2357,7 +2360,7 @@ const menuData = [
 {
     id: 29,
     name: "Masala Chai",
-    price: 60,
+    price: 50,
     description: "Spiced Indian tea with milk.",
     image: "https://i.pinimg.com/474x/43/6d/a4/436da44985d61c713fbc4e2676e18a68.jpg",
     category: "beverage",
@@ -2366,7 +2369,7 @@ const menuData = [
 {
     id: 30,
     name: "Lassi",
-    price: 90,
+    price: 70,
     description: "Sweet or salted yogurt-based drink.",
     image: "https://i.pinimg.com/474x/4b/57/b5/4b57b5c16c7bbdde2ae905067fbad2d5.jpg",
     category: "beverage",
@@ -2375,7 +2378,7 @@ const menuData = [
 {
     id: 31,
     name: "Fresh Lime Soda",
-    price: 80,
+    price: 60,
     description: "Refreshing lime and soda drink, sweet or salted.",
     image: "https://i.pinimg.com/474x/d6/79/0d/d6790d68e72b1463a6830d5f1d5e7f61.jpg",
     category: "beverage",
@@ -2383,7 +2386,7 @@ const menuData = [
 },
 {
     id: 32,
-    name: "Mango Shake",
+    name: "Mango Shake ",
     price: 120,
     description: "Thick mango milkshake.",
     image: "https://i.pinimg.com/474x/8a/c8/93/8ac893ae426241f75962933ff4747e65.jpg",
@@ -2398,7 +2401,189 @@ const menuData = [
     image: "https://i.pinimg.com/474x/dd/7f/e2/dd7fe2c6c01a6f26efb47f9e8f719dee.jpg",
     category: "beverage",
     isVeg: true
+},
+{
+  id: 34,
+  name: "Kharwas",
+  price: 75,
+  description: "A Maharashtrian steamed milk pudding made from colostrum milk, cardamom, and jaggery.",
+  image: "https://i.pinimg.com/474x/33/0b/27/330b274b3a9fefd98048cf94e1403894.jpg",
+  category: "dessert",
+  isVeg: true
+},
+{
+  id: 35,
+  name: "Chhena Poda",
+  price: 85,
+  description: "A rare Odia delight made by baking fresh chhena (cottage cheese) with jaggery and dry fruits.",
+  image: "https://i.pinimg.com/474x/da/7b/3b/da7b3bf48d9c15e320d6a50fd6972c90.jpg",
+  category: "dessert",
+  isVeg: true
+},
+
+{
+  id: 36,
+  name: "Chocolate Brownie ",
+  price: 90,
+  description: "Rich and gooey chocolate brownie served warm.",
+  image: "https://i.pinimg.com/474x/bb/16/00/bb1600ca1db254f511ee0c3773715df7.jpg",
+  category: "dessert",
+  isVeg: true
+},
+{
+  id: 37,
+  name: "Fruit Custard ",
+  price: 75,
+  description: "Chilled vanilla custard mixed with seasonal fruits.",
+  image: "https://i.pinimg.com/474x/5b/78/f4/5b78f4733ba07325f60348d48cce3101.jpg",
+  category: "dessert",
+  isVeg: true
+},
+{
+  id: 38,
+  name: "Mango Lassi ",
+  price: 60,
+  description: "Sweetened yogurt blended with ripe mango pulp.",
+  image: "https://i.pinimg.com/474x/4e/ca/c1/4ecac17a78fcbe57eebe424abd33440c.jpg",
+  category: "beverage",
+  isVeg: true
+},
+{
+  id: 39,
+  name: "Cold Coffee ",
+  price: 145,
+  description: "Chilled coffee blended with milk and ice cream.",
+  image: "https://i.pinimg.com/474x/06/83/a1/0683a180a964320d3f81d6840fde1771.jpg",
+  category: "beverage",
+  isVeg: true
+},
+{
+  id: 40,
+  name: "Lemon Iced Tea ",
+  price: 50,
+  description: "Refreshing iced tea infused with lemon flavor.",
+  image: "https://i.pinimg.com/474x/64/bb/bc/64bbbc45a302b646abee022c00ca0c41.jpg",
+  category: "beverage",
+  isVeg: true
+},
+{
+  id: 41,
+  name: "Chicken Fried Rice ",
+  price: 130,
+  description: "Basmati rice stir-fried with chicken chunks and veggies.",
+  image: "https://i.pinimg.com/474x/ad/82/36/ad82368d7d2c7a5a7ac5ff98e9eacbea.jpg",
+  category: "rice",
+  isVeg: false
+},
+{
+  id: 42,
+  name: "Egg Fried Rice ",
+  price: 110,
+  description: "Wok-tossed rice with scrambled eggs and spices.",
+  image: "https://i.pinimg.com/474x/ad/82/36/ad82368d7d2c7a5a7ac5ff98e9eacbea.jpg",
+  category: "rice",
+  isVeg: false
+},
+{
+  id: 43,
+  name: "Veg Pulao ",
+  price: 100,
+  description: "Basmati rice cooked with colorful vegetables and spices.",
+  image: "https://i.pinimg.com/474x/47/cd/a9/47cda9667f7680573ca0bc53a799c4dc.jpg",
+  category: "rice",
+  isVeg: true
+},
+{
+  id: 44,
+  name: "Paneer Fried Rice ",
+  price: 120,
+  description: "Spicy rice with sautéed paneer cubes and herbs.",
+  image: "https://i.pinimg.com/474x/75/03/5b/75035bf7bd2380abea9d98e15f11b007.jpg",
+  category: "rice",
+  isVeg: true
+},
+{
+  id: 45,
+  name: "Chicken Schezwan Rice ",
+  price: 140,
+  description: "Spicy Indo-Chinese rice with chicken and Schezwan sauce.",
+  image: "https://i.pinimg.com/736x/af/62/07/af6207ec855b1171959c9caa06042307.jpg",
+  category: "rice",
+  isVeg: false
+},
+{
+  id: 46,
+  name: "Butterscotch Ice Cream ",
+  price: 80,
+  description: "Creamy ice cream with butterscotch chunks and sauce.",
+  image: "https://i.pinimg.com/474x/bf/1f/66/bf1f66a3704f696a53acdea3dc8b8296.jpg",
+  category: "dessert",
+  isVeg: true
+},
+{
+  id: 47,
+  name: "Watermelon Juice 🍉",
+  price: 50,
+  description: "Cool watermelon juice with mint and a splash of lemon.",
+  image: "https://i.pinimg.com/474x/16/45/c6/1645c626c1d4148767900e8363e5da71.jpg",
+  category: "beverage",
+  isVeg: true
+},
+{
+  id: 48,
+  name: "Chicken Dum Rice ",
+  price: 135,
+  description: "Rice cooked on dum with chicken and aromatic spices.",
+  image: "https://i.pinimg.com/474x/36/f7/01/36f701ba32bd5cbd30de95195ed75c37.jpg",
+  category: "rice",
+  isVeg: false
+},
+{
+  id: 49,
+  name: "Carrot Halwa ",
+  price: 85,
+  description: "Slow-cooked grated carrots in milk and ghee.",
+  image: "https://i.pinimg.com/474x/9b/95/7c/9b957c0cbf73f85a5694d8019b090c82.jpg",
+  category: "dessert",
+  isVeg: true
+},
+{
+  id: 50,
+  name: "Pineapple Juice ",
+  price: 55,
+  description: "Fresh pineapple juice served chilled with a mint twist.",
+  image: "https://i.pinimg.com/474x/99/8e/29/998e2926fd2c29c1a1ddeeeda99a3e2f.jpg",
+  category: "beverage",
+  isVeg: true
+},
+{
+  id: 51,
+  name: "Egg Pulao ",
+  price: 115,
+  description: "Fragrant rice tossed with eggs and whole spices.",
+  image: "https://i.pinimg.com/474x/b2/b9/0d/b2b90d424c3df512ba7f21a58cf65af3.jpg",
+  category: "rice",
+  isVeg: false
+},
+{
+  id: 52,
+  name: "Strawberry Milkshake ",
+  price: 70,
+  description: "Creamy milkshake made with fresh strawberries and cream.",
+  image: "https://i.pinimg.com/474x/a2/d6/15/a2d615448a2808858d37a146e72338e3.jpg",
+  category: "beverage",
+  isVeg: true
+},
+{
+  id: 53,
+  name: "Double Ka Meetha ",
+  price: 90,
+  description: "Hyderabadi dessert made with fried bread and sweetened milk.",
+  image: "https://i.pinimg.com/474x/16/ae/11/16ae119e2fbd208f3571f221f38a584b.jpg",
+  category: "dessert",
+  isVeg: true
 }
+
 
 ];
 
